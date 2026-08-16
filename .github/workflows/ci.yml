@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tap checkout
+        run: brew tap-new --no-git vidstow/tap
+      - name: Install checkout into tap
+        run: |
+          tap_dir="$(brew --repository vidstow/tap)"
+          rm -rf "$tap_dir"
+          ln -s "$GITHUB_WORKSPACE" "$tap_dir"
+      - name: Style
+        run: brew style --cask vidstow/tap/vidstow
+      - name: Audit
+        # The release is intentionally a prerelease, which the online audit
+        # rejects even when its URL and checksum are valid.
+        run: brew audit --cask vidstow/tap/vidstow
