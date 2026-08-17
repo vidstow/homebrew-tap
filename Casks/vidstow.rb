@@ -1,6 +1,6 @@
 cask "vidstow" do
-  version "0.1.0-beta.1"
-  sha256 "bbf695b5d6f3f151157a9ae8a98787d132c752fb7141831073644561636fdc3c"
+  version "0.1.0-beta.2"
+  sha256 "e5c419c23f2408628725cf31305b7c11101d1d36bb59cbdeb4b9de139a51fe3f"
 
   url "https://github.com/vidstow/vidstow/releases/download/v#{version}/VidStow-#{version}-darwin-arm64.zip"
   name "VidStow"
