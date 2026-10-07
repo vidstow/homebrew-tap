@@ -8,7 +8,6 @@ cask "vidstow" do
   homepage "https://github.com/vidstow/vidstow"
 
   depends_on arch: :arm64
-  depends_on formula: "ffmpeg"
   depends_on macos: :big_sur
 
   app "VidStow/VidStow.app"
