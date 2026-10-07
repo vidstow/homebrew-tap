@@ -11,8 +11,8 @@ brew tap vidstow/tap
 brew install --cask vidstow
 ```
 
-The cask also installs FFmpeg, which VidStow requires for media merging and
-conversion.
+VidStow brings its own FFmpeg inside the app, so the cask installs nothing
+else.
 
 ## Important macOS security notice
 
